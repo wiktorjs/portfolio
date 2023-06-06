@@ -1,0 +1,45 @@
+@import '@/app/styles/variables.scss';
+.social {
+  margin-top: 4rem;
+
+  display: flex;
+  align-items: center;
+
+  gap: 3rem;
+}
+
+.link {
+  display: inline-block;
+  outline: none;
+  padding: 1rem;
+  border-radius: 100px;
+  border: 2px solid $color-black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba($color-primary, 0.4);
+  box-shadow: $b-shadow-s;
+  cursor: pointer;
+
+  transition: background-color 0.3s ease-in-out;
+  will-change: background-color;
+
+  &:hover,
+  &:focus {
+    background-color: $color-black;
+
+    & > * {
+      fill: $color-white;
+    }
+  }
+}
+
+.icon {
+  color: inherit;
+  height: 3rem;
+  width: 3rem;
+  fill: currentColor;
+
+  transition: fill 0.3s ease-in-out;
+  will-change: fill;
+}

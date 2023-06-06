@@ -1,0 +1,44 @@
+@mixin absoluteCenter() {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+// | === MEDIA QUERIES ===
+@mixin respond($breakpoint) {
+  @if $breakpoint == phone {
+    @media only screen and (max-width: 37.5em) {
+      @content;
+    } // 600px
+  }
+
+  @if $breakpoint == tab-port {
+    @media only screen and (max-width: 56.25em) {
+      @content;
+    } // 900px
+  }
+
+  @if $breakpoint == tab-land {
+    @media only screen and (max-width: 78.125em) {
+      @content;
+    } // 1250px
+  }
+
+  @if $breakpoint == big-desk {
+    @media only screen and (min-width: 112.5em) {
+      @content;
+    } // 1800px
+  }
+}
+
+@mixin meshGradient($opacity) {
+  // prettier-ignore
+  background-image: radial-gradient(at 85% 12%, hsla(189,67%,60%, $opacity) 0px, transparent 50%),
+    radial-gradient(at 14% 94%, hsla(238,80%,64%, $opacity) 0px, transparent 50%),
+    radial-gradient(at 93% 40%, hsla(74,72%,69%, $opacity) 0px, transparent 50%),
+    radial-gradient(at 17% 98%, hsla(32,75%,63%, $opacity) 0px, transparent 50%),
+    radial-gradient(at 72% 33%, hsla(233,83%,65%, $opacity) 0px, transparent 50%),
+    radial-gradient(at 13% 58%, hsla(309,71%,78%, $opacity) 0px, transparent 50%),
+    radial-gradient(at 60% 5%, hsla(146,76%,75%, $opacity) 0px, transparent 50%);
+}

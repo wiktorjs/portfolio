@@ -1,0 +1,62 @@
+@import '@/app/styles/variables.scss';
+@import '@/app/styles/mixins.scss';
+
+.card {
+  @include absoluteCenter;
+  width: 80%;
+
+  min-width: fit-content;
+
+  padding: 8rem 5rem;
+  border-radius: 15px;
+
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+
+  box-shadow: 0 2px 7px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  border: 2px solid #ffe68b;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    @include meshGradient(0.2);
+
+    background-color: rgba($color-primary-dark-2, 0.3);
+  }
+}
+
+.img {
+  border-radius: 500px;
+  object-fit: cover;
+  width: 15rem;
+  aspect-ratio: 1/1;
+
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
+  border: 2px solid #ffe68b;
+}
+
+.text {
+  text-align: center;
+
+  & > * {
+    color: $color-white;
+    text-shadow: $t-outline;
+  }
+}
+
+.p1 {
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 2rem;
+}
+.p2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+}

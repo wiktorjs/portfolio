@@ -1,0 +1,54 @@
+@import '@/app/styles/variables.scss';
+@import '@/app/styles/mixins.scss';
+.form {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  
+  label {
+    margin: 2rem 0 0.5rem;
+  }
+
+  input {
+    height: 4rem;
+  }
+
+  textarea {
+    resize: none;
+    flex: 1;
+    padding-top: 1rem;
+  }
+
+  & > input,
+  & > textarea {
+    border: 2px solid $color-black;
+    padding-left: 1rem;
+    outline: none;
+    font-family: inherit;
+    font-size: inherit;
+    letter-spacing: 2px;
+
+    box-shadow: 3px 3px 0 $color-black;
+    border-radius: 5px;
+
+    transition: border-color, color, box-shadow, 0.3s ease;
+    will-change: border-color, color, box-shadow;
+
+    &::placeholder {
+      text-transform: uppercase;
+      color: $color-secondary;
+    }
+
+    &:focus {
+      color: $color-primary-dark-1;
+      border-color: $color-primary-dark-1;
+      box-shadow: 4px 4px 0 $color-primary-dark-1;
+    }
+
+    &.invalid {
+      border-color: rgb(227, 80, 80);
+      box-shadow: 4px 4px 0 rgb(227, 80, 80);
+      color: rgb(227, 80, 80);
+    }
+  }
+}

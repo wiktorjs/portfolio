@@ -1,0 +1,41 @@
+@import '@/app/styles/mixins';
+@import '@/app/styles/variables';
+.about {
+  max-height: 40rem;
+  width: 80%;
+  @include meshGradient(0.05);
+  background-color: rgba($color-white, 0.05);
+  border-radius: 10px;
+  padding: 7rem 5rem;
+  box-shadow: 0 4px 5px rgba(0, 0, 0, 0.1);
+  // border: 1px solid $color-primary-dark-2;
+}
+
+.h3 {
+  font-size: 3rem;
+  font-weight: 600;
+  color: $color-black;
+}
+
+.text {
+  margin: 2rem 0;
+
+  & p {
+    margin: auto 0;
+    display: inline-block;
+    width: 80%;
+  }
+}
+
+.img {
+  border-radius: 500px;
+  object-fit: cover;
+  width: 15rem;
+  aspect-ratio: 1/1;
+
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
+  border: 2px solid #ffe68b;
+  margin-top: -1rem;
+  float: right;
+  border: 2px solid $color-bg;
+}

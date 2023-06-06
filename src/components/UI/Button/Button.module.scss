@@ -1,0 +1,157 @@
+@import '@/app/styles/variables.scss';
+
+.btn {
+  // flex-grow: 1;
+  display: inline-block;
+
+
+  position: relative;
+  font-size: 1.3rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-decoration: none;
+
+  color: $color-white;
+  border: 2px solid $color-black;
+
+  padding: 1.25em 2em;
+
+  outline: none;
+  overflow: visible;
+  user-select: none;
+  box-shadow: $b-shadow-s;
+  background-color: $color-primary;
+  transition: color, background-color 0.3s ease-in-out;
+  will-change: color, background-color;
+
+  &::before {
+    content: ' ';
+    width: 1.5625rem;
+    height: 2px;
+    background: $color-black;
+    top: 50%;
+    left: 1.5em;
+    position: absolute;
+    transform: translateY(-50%);
+    transform-origin: center;
+    transition: width 0.3s ease-in-out;
+    will-change: width;
+  }
+
+  & .text {
+    font-size: 1.125em;
+    line-height: 1.33333em;
+    padding-left: 2em;
+    display: block;
+    text-align: left;
+    transition: color, padding-left, 0.3s ease-in-out;
+    will-change: color, padding-left;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: $color-black;
+  }
+
+  & .key {
+    height: 2px;
+    position: absolute;
+    background: $color-bg;
+    transition: width 0.5s ease-out, right 0.3s ease-out;
+    will-change: width;
+
+    &--1 {
+      height: 2px;
+      width: 1.5625rem;
+      top: -2px;
+      left: 0.625rem;
+    }
+
+    &--2 {
+      width: 1.5625rem;
+      right: 1.875rem;
+      bottom: -2px;
+    }
+
+    &--3 {
+      width: 0.625rem;
+      right: 0.625rem;
+      bottom: -2px;
+    }
+  }
+
+  &:hover,
+  &:focus,
+  &:active {
+    color: $color-white;
+    background-color: $color-black;
+
+    &::before {
+      width: 0.9375rem;
+      background: $color-white;
+    }
+
+    & .text {
+      color: $color-white;
+      padding-left: 1.5em;
+    }
+
+    & .key--1 {
+      left: -2px;
+      width: 0px;
+    }
+
+    & .key--2,
+    & .key--3 {
+      right: 0;
+      width: 0;
+    }
+  }
+}
+// Original design by cssbuttons-io
+
+
+.reverse {
+  background-color: $color-black;
+
+  &::before {
+    background-color: $color-white;
+  }
+
+  & .text {
+    color: $color-white;
+  }
+
+  &:hover,
+  &:focus,
+  &:active {
+    color: $color-black;
+    background: $color-primary;
+
+    &::before {
+      width: 0.9375rem;
+      background: $color-black;
+    }
+
+    & .text {
+      color: $color-black;
+      padding-left: 1.5em;
+    }
+  }
+}
+
+.form {
+  margin-top: 2rem;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: transform .2s .2s ease;
+  & > .text {
+      text-align: center;
+      padding: 0;
+  }
+
+  &:hover {
+      transform: translateY(-3px);
+      & > .text {
+          padding: 0;
+      }
+  }
+}

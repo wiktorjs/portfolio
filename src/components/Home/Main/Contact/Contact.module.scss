@@ -1,0 +1,74 @@
+@import '@/app/styles/variables.scss';
+@import '@/app/styles/mixins.scss';
+.contact {
+  padding-bottom: 15rem;
+
+  &-box {
+    display: flex;
+    flex-direction: row;
+    padding: 5rem 10rem;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15vw;
+
+    @include meshGradient(0.05);
+    background-color: rgba($color-white, 0.05);
+
+    box-shadow: $b-shadow-s;
+    border-radius: 20px;
+  }
+  
+ 
+}
+
+.text-box {
+  opacity: 0.5;
+
+  & > h3 {
+    text-align: center;
+    font-size: 5rem;
+    font-weight: 600;
+    margin-bottom: 3rem;
+  }
+}
+
+.form-box {
+  display: flex;
+  flex-direction: column;
+  width: 45rem;
+  height: 60rem;
+  padding: 8rem 5rem 5rem;
+  position: relative;
+  background-color: $color-white;
+
+  // clip-path: polygon(0% 100%, 100% 100%, 100% 0%, 24% 0, 0 17%);
+  // border-right: 4px solid $color-black;
+  // border-bottom: 4px solid $color-black;
+
+  border-radius: 10px;
+  border: 2px solid $color-black;
+  box-shadow: 4px 4px 0 $color-black;
+
+  & > h4 {
+    text-align: center;
+    font-size: 3rem;
+    font-weight: 600;
+  }
+}
+
+.icon-box {
+  border-radius: 500px;
+  background-color: $color-black;
+  height: 30rem;
+  width: 30rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon {
+  fill: $color-white;
+  height: 80%;
+  width: 80%;
+  transform: rotate(15deg);
+}

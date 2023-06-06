@@ -1,0 +1,35 @@
+@import '@/app/styles/variables.scss';
+.navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 3rem;
+}
+
+.logo {
+  height: 5rem;
+}
+
+.list {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+}
+
+.link {
+  outline: none;
+  text-decoration: none;
+  font-weight: 600;
+  border-bottom: 2px solid transparent;
+
+  transition: color, border-color, 0.3s ease;
+  will-change: color, border-color;
+
+  &:hover,
+  &:focus,
+  &:active {
+    color: $color-primary-dark-1;
+    border-color: $color-primary-dark-1;
+  }
+}

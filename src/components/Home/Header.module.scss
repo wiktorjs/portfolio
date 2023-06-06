@@ -1,0 +1,44 @@
+@import '@/app/styles/variables.scss';
+.header {
+  position: relative;
+  padding: 5rem;
+}
+
+.h2 {
+  font-weight: 400;
+  font-size: 3.5rem;
+  text-align: left;
+  margin-bottom: 2rem;
+}
+
+.content {
+  display: flex;
+
+  width: 100%;
+
+  & > * {
+    flex: 0 0 50%;
+  }
+}
+
+.graphics {
+  position: relative;
+
+  &-bg {
+    max-height: 100%;
+    width: 80%;
+    object-fit: contain;
+    position: absolute;
+    bottom: 0;
+    right: -5rem;
+    transform: rotateY(180deg);
+  }
+}
+
+.buttons {
+   display: flex;
+   flex-wrap: wrap;
+   gap: 2rem;
+   width: 70%;
+
+}
