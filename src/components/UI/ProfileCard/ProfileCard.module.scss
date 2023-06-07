@@ -8,15 +8,14 @@
   min-width: fit-content;
 
   padding: 8rem 5rem;
-  border-radius: 15px;
 
   display: flex;
   align-items: center;
   gap: 3rem;
 
-  box-shadow: 0 2px 7px rgba(0, 0, 0, 0.2);
   overflow: hidden;
-  border: 2px solid #ffe68b;
+
+  @include boxOutline(2px, 1px);
 
   &::before {
     content: '';

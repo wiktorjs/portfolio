@@ -10,7 +10,7 @@ export default function Contact() {
 
         <div className={classes["text-box"]}>
             
-          <h3>Let's Talk!</h3>
+          <h3>Get In Touch</h3>
           <div className={classes["icon-box"]}>
             <EnvelopeSimple weight='light' className={classes.icon} />
 

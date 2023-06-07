@@ -42,3 +42,9 @@
     radial-gradient(at 13% 58%, hsla(309,71%,78%, $opacity) 0px, transparent 50%),
     radial-gradient(at 60% 5%, hsla(146,76%,75%, $opacity) 0px, transparent 50%);
 }
+
+@mixin boxOutline($border-width, $shadow-transform) {
+  border: $border-width solid $color-black;
+  border-radius: $border-radius;
+  box-shadow: $shadow-transform $shadow-transform 0 $color-black;
+}

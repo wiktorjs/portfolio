@@ -19,7 +19,9 @@
   outline: none;
   overflow: visible;
   user-select: none;
-  box-shadow: $b-shadow-s;
+
+  box-shadow: 2px 2px 0 $color-black;
+  
   background-color: $color-primary;
   transition: color, background-color 0.3s ease-in-out;
   will-change: color, background-color;

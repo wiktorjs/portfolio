@@ -14,11 +14,8 @@
     @include meshGradient(0.05);
     background-color: rgba($color-white, 0.05);
 
-    box-shadow: $b-shadow-s;
-    border-radius: 20px;
+    @include boxOutline(2px, 2px);
   }
-  
- 
 }
 
 .text-box {
