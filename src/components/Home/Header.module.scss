@@ -1,7 +1,24 @@
 @import '@/app/styles/variables.scss';
+@import '@/app/styles/mixins.scss';
 .header {
   position: relative;
   padding: 5rem;
+
+  @include respond(tab-port) {
+    padding-top: 12rem;
+  }
+}
+
+.logo {
+  display: none;
+  @include respond(tab-port) {
+    display: block;
+    height: 6rem;
+    position: absolute;
+    top: 3rem;
+    left: 50%;
+    transform: translateX(-50%);
+  }
 }
 
 .h2 {
@@ -9,6 +26,9 @@
   font-size: 3.5rem;
   text-align: left;
   margin-bottom: 2rem;
+  @include respond(tab-port) {
+    font-size: 3rem;
+  }
 }
 
 .content {
@@ -18,6 +38,13 @@
 
   & > * {
     flex: 0 0 50%;
+  }
+}
+
+.text {
+  @include respond(phone) {
+    flex-basis: 100%;
+    z-index: 1;
   }
 }
 
@@ -32,6 +59,25 @@
     bottom: 0;
     right: -5rem;
     transform: rotateY(180deg);
+
+    @media only screen and (max-width: 650px) {
+      height: 40rem;
+      width: 100%;
+      position: relative;
+      right: 0;
+    }
+
+    @include respond(phone) {
+      opacity: .2;
+      filter: brightness(1.1);
+    }
+  }
+
+  @media only screen and (max-width: 650px) {
+    position: absolute;
+    right: 5rem;
+    top: 50%;
+    transform: translateY(-50%);
   }
 }
 
@@ -40,5 +86,7 @@
    flex-wrap: wrap;
    gap: 2rem;
    width: 70%;
-
+   @include respond(tab-port) {
+width: 100%;
+  }
 }

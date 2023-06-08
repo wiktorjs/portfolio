@@ -22,7 +22,21 @@ h1 {
       font-weight: 600;
       color: $color-primary;
       text-shadow: $t-outline-2px;
+
+      @include respond(tab-port) {
+        text-shadow: $t-outline;
+        font-size: 6rem;
+      }
     }
+  }
+
+  @include respond(tab-port) {
+    font-size: 5rem;
+    line-height: 1.3;
+  }
+
+  @media only screen and (max-width: 350px) {
+    font-size: 4.5rem;
   }
 }
 

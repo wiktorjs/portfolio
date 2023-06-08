@@ -3,26 +3,33 @@ import Project from './Project';
 import classes from './Projects.module.scss';
 
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Autoplay, Keyboard, Navigation, Pagination } from 'swiper';
-
+import { A11y, Autoplay, Keyboard, Navigation, Pagination } from 'swiper';
 import 'swiper/swiper-bundle.min.css';
+import { CaretLeft, CaretRight } from '@phosphor-icons/react';
+import { useRef } from 'react';
+
 
 export default function Projects() {
+  const swiperRef: any = useRef();
+  
   return (
     <section id="projects">
       <h2>My Latest Projects</h2>
 
       <div className={classes.projects}>
         <Swiper
-          modules={[Navigation, Pagination, Autoplay, Keyboard]}
+          modules={[Navigation, Pagination, Autoplay, Keyboard, A11y]}
           centeredSlides
-          pagination={{ clickable: true, bulletClass: `swiper-pagination-bullet ${classes.pagination}` }}
-          navigation
+          pagination={{
+            clickable: true,
+            bulletClass: `swiper-pagination-bullet ${classes.pagination}`,
+          }}
           loop
           autoplay={{
             delay: 5000,
             disableOnInteraction: false,
           }}
+          lazyPreloadPrevNext={1}
           keyboard={{
             enabled: true,
             onlyInViewport: false,
@@ -30,8 +37,10 @@ export default function Projects() {
           }}
           spaceBetween={10}
           slidesPerView={1}
-        >
+          a11y={{ enabled: true }}
 
+          onSwiper={(swiper) => swiperRef.current = swiper}
+        >
           {projectsArr.map((project, i) => (
             <SwiperSlide key={i}>
               <Project
@@ -41,7 +50,9 @@ export default function Projects() {
               />
             </SwiperSlide>
           ))}
-          
+
+          <CaretLeft onClick={() => swiperRef.current?.slidePrev()} weight='bold' className={classes.icon}/>
+          <CaretRight onClick={() => swiperRef.current?.slideNext()} weight='bold' className={classes.icon} />
         </Swiper>
       </div>
     </section>

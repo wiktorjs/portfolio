@@ -12,7 +12,7 @@ const Project: FC<ProjectProps> = ({ title, text, img }) => {
   return (
     <>
       <div className={`${classes.project}`}>
-        <img className={classes.img} src={img} alt={`${title} overview`}  />
+        <img className={classes.img} src={img} alt={`${title} overview`}  loading='lazy' />
 
         <h3>{title}</h3>
 

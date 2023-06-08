@@ -1,12 +1,16 @@
-import Image from "next/image";
 import classes from "./MainNavigation.module.scss";
 import logoImage from "@/img/logo.webp";
 import Button from "../Button/Button";
+import NavigationButton from "./NavigationButton";
+import { useState } from "react";
 
 export default function MainNavigation() {
+  const [isActive, setIsActive] = useState(false);
 
     return (
-        <nav className={classes.navigation}>
+      <>
+      <NavigationButton active={isActive} onClick={() => setIsActive(prevState => !prevState)} />
+        <nav className={`${classes.navigation} ${isActive ? classes.active : ''}`}>
        <img className={classes.logo} src={logoImage.src}  alt="wiktorjs logo"/>
         <ul className={classes.list}>
           <li className={classes.item}>
@@ -26,5 +30,6 @@ export default function MainNavigation() {
           </li>
         </ul>
       </nav>
+      </>
     )
 }

@@ -1,0 +1,78 @@
+@import '@/app/styles/mixins';
+@import '@/app/styles/variables';
+.button {
+  border: none;
+  outline: none;
+  position: fixed;
+  z-index: 200;
+  display: none;
+  height: 2rem;
+
+  padding: 3rem;
+  border-radius: 500px;
+  cursor: pointer;
+
+  transition: background-color, border-color, 0.2s ease;
+  will-change: background-color, border-color; 
+
+  top: 3rem;
+  left: 3rem;
+  background-color: $color-primary;
+  border: 2px solid $color-black;
+
+
+  @include respond(tab-port) {
+    display: inline-block;
+
+    &.active {
+      border-color: transparent;
+      background-color: transparent;
+    }
+  }
+
+  // Span elements
+  & > * {
+    display: block;
+    position: absolute;
+    left: 50%;
+    height: 2px;
+    width: 50%;
+    border-radius: 2px;
+    background-color: $color-black;
+
+    transform: rotate(0deg) translateX(-50%);
+    transform-origin: left center;
+    transition: transform, top, width, opacity, background-color,
+      0.25s ease-in-out;
+    will-change: transform, top, width, opacity, background-color;
+  }
+}
+
+.top {
+  top: 35%;
+
+  &.active {
+    transform: rotate(45deg) translateX(-50%);
+    top: 50%;
+  }
+}
+
+.mid {
+  transform: translate(-50% -50%);
+  top: 50%;
+
+  &.active {
+    width: 0%;
+    opacity: 0;
+  }
+}
+
+.bottom {
+  transform: translate(-50% -100%);
+  top: 65%;
+
+  &.active {
+    transform: rotate(-45deg) translateX(-50%);
+    top: 50%;
+  }
+}

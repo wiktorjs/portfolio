@@ -6,9 +6,9 @@ export default function About() {
         <h2>About Me</h2>
   
         <div className={classes.about}>
-          <h3 className={classes.h3}>Front-end Developer</h3>
   
           <div className={classes.text}>
+          <h3 className={classes.h3}>Front-end Developer</h3>
             <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia
               recusandae, harum illum ipsa nemo animi deleniti, saepe nam est
@@ -18,8 +18,9 @@ export default function About() {
               incidunt quisquam reiciendis, fugiat cupiditate velit cum magni
               voluptates. Nulla aspernatur facilis nostrum quasi consequuntur!
             </p>
-            <img className={classes.img} src={aboutImg.src} />
           </div>
+          
+            <img className={classes.img} src={aboutImg.src} />
         
         </div>
       </section>

@@ -49,6 +49,9 @@ body {
     background-color: $color-bg;
   }    
 
+  @include respond(tab-port) {
+    padding: 0;
+  }
 
 }
 
@@ -62,4 +65,9 @@ main {
     gap: 3rem;
     background-color: $color-bg;
   }
+}
+
+
+.test {
+  height: 2rem; width: 2rem; background-color: red;
 }
