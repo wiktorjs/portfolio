@@ -27,7 +27,7 @@ export default function Header() {
         </div>
 
         <div className={classes.graphics}>
-          <img className={classes['graphics-bg']} src={headerImage.src} />
+          <img className={classes['graphics-bg']} src={headerImage.src} alt='Header background image' />
           <ProfileCard />
         </div>
       </div>

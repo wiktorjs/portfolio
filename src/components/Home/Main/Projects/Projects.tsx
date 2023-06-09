@@ -2,7 +2,7 @@ import projectsArr from '@/store/projects';
 import Project from './Project';
 import classes from './Projects.module.scss';
 
-import { Swiper, SwiperSlide } from 'swiper/react';
+import { Swiper, SwiperClass, SwiperSlide } from 'swiper/react';
 import { A11y, Autoplay, Keyboard, Navigation, Pagination } from 'swiper';
 import 'swiper/swiper-bundle.min.css';
 import { CaretLeft, CaretRight } from '@phosphor-icons/react';
@@ -10,7 +10,7 @@ import { useRef } from 'react';
 
 
 export default function Projects() {
-  const swiperRef: any = useRef();
+  const swiperRef = useRef<SwiperClass>();
   
   return (
     <section id="projects">

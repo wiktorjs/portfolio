@@ -20,7 +20,7 @@ export default function About() {
             </p>
           </div>
           
-            <img className={classes.img} src={aboutImg.src} />
+            <img className={classes.img} src={aboutImg.src} alt="Wiktor's photo" />
         
         </div>
       </section>

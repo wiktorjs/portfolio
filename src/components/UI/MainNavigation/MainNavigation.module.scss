@@ -36,7 +36,8 @@
   }
 
   @include respond(phone) {
-    height: 8rem;
+    width: 85%;
+    height: auto;
   }
 }
 
