@@ -12,12 +12,12 @@ export default function About() {
         <div className={classes.text}>
           <p>
             Hi there! My name is Wiktor - currently a first year student at
-            University of Warsaw. In 2022 I've discovered my passion for coding.
+            University of Warsaw. In 2022 I&apos;ve discovered my passion for coding.
             I tried many things but it was front-end development that truly
             captured my heart. Keeping an eye for each and tiniest of details, I
             strive to create visually appealing web applications. I always make
             sure that my apps are well-optimized, easy to use by the end users
-            and run smoothly. Let's connect and discuss how I can contribute to
+            and run smoothly. Let&apos;s connect and discuss how I can contribute to
             your next front-end development project.
           </p>
         <img className={classes.img} src={aboutImg.src} alt="Wiktor's photo" />
