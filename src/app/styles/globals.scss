@@ -25,10 +25,6 @@ html {
     @include respond(tab-port) {
       font-size: 50%;
     }
-
-    @include respond(tab-port) {
-      font-size: 40%;
-    }
 }
 
 img {
@@ -65,9 +61,4 @@ main {
     gap: 3rem;
     background-color: $color-bg;
   }
-}
-
-
-.test {
-  height: 2rem; width: 2rem; background-color: red;
 }

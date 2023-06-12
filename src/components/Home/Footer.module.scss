@@ -67,3 +67,29 @@
     }
   }
 }
+
+.social {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.icon-box {
+  display: inline-block;
+
+  &:focus,
+  &:hover > .icon {
+    fill: $color-primary;
+    transform: translateY(-2px);
+  }
+}
+
+.icon {
+  fill: $color-white;
+  height: 3rem;
+  width: 3rem;
+
+  transition: fill, transform, 0.2s ease;
+}

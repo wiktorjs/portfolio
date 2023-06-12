@@ -47,6 +47,7 @@ export default function Projects() {
                 img={project.img}
                 title={project.name}
                 text={project.desc}
+                href={project.href}
               />
             </SwiperSlide>
           ))}

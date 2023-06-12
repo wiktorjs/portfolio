@@ -1,9 +1,10 @@
+import { EnvelopeSimple, GithubLogo, LinkedinLogo } from '@phosphor-icons/react';
+
 import classes from './Footer.module.scss';
 import footerLogo from '@/img/logo.webp';
 export default function Footer() {
   return (
     <footer className={classes.footer}>
-
       <div className={classes.content}>
         <img
           className={classes.logo}
@@ -38,6 +39,33 @@ export default function Footer() {
             </a>
           </li>
         </ul>
+
+
+        <div className={classes.social}>
+          <a
+            className={classes['icon-box']}
+            href="https://www.linkedin.com/in/wiktorjs"
+            target="_blank"
+          >
+            <LinkedinLogo weight="regular" className={classes.icon} />
+          </a>
+
+          <a
+            className={classes['icon-box']}
+            href="https://github.com/wiktorjs"
+            target="_blank"
+          >
+            <GithubLogo weight="regular" className={classes.icon} />
+          </a>
+
+          <a
+            className={classes['icon-box']}
+            href="mailto:wiktorj.sienkiewicz@gmail.com"
+            target="_blank"
+          >
+            <EnvelopeSimple weight="regular" className={classes.icon} />
+          </a>
+        </div>
 
         <p className={classes.copyright}>
           Copyright &copy; {new Date().getFullYear()} by Wiktor Sienkiewicz

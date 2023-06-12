@@ -1,28 +1,30 @@
-import classes from "./About.module.scss";
-import aboutImg from "@/img/wiktorjs.webp";
+import Button from '@/components/UI/Button/Button';
+import classes from './About.module.scss';
+import aboutImg from '@/img/wiktorjs.webp';
 export default function About() {
-    return(
-        <section id="about">
-        <h2>About Me</h2>
-  
-        <div className={classes.about}>
-  
-          <div className={classes.text}>
-          <h3 className={classes.h3}>Front-end Developer</h3>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia
-              recusandae, harum illum ipsa nemo animi deleniti, saepe nam est
-              adipisci tempora neque quasi assumenda fugit ut molestiae laborum
-              fugiat? Incidunt! Lorem ipsum dolor sit amet consectetur
-              adipisicing elit. Molestiae inventore possimus culpa ad aliquam ex
-              incidunt quisquam reiciendis, fugiat cupiditate velit cum magni
-              voluptates. Nulla aspernatur facilis nostrum quasi consequuntur!
-            </p>
-          </div>
-          
-            <img className={classes.img} src={aboutImg.src} alt="Wiktor's photo" />
-        
+  return (
+    <section id="about">
+      <h2>About Me</h2>
+
+      <div className={classes.about}>
+        <h3 className={classes.h3}>Front-end Developer</h3>
+
+        <div className={classes.text}>
+          <p>
+            Hi there! My name is Wiktor - currently a first year student at
+            University of Warsaw. In 2022 I've discovered my passion for coding.
+            I tried many things but it was front-end development that truly
+            captured my heart. Keeping an eye for each and tiniest of details, I
+            strive to create visually appealing web applications. I always make
+            sure that my apps are well-optimized, easy to use by the end users
+            and run smoothly. Let's connect and discuss how I can contribute to
+            your next front-end development project.
+          </p>
+        <img className={classes.img} src={aboutImg.src} alt="Wiktor's photo" />
         </div>
-      </section>
-    )
+
+        <Button text="Contact Me" href='#contact' />
+      </div>
+    </section>
+  );
 }

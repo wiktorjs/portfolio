@@ -5,10 +5,11 @@ interface ProjectProps {
   title: string;
   text: string;
   img: string;
-
+  href: string;
 }
 
-const Project: FC<ProjectProps> = ({ title, text, img }) => {
+const Project: FC<ProjectProps> = ({ title, text, img, href }) => {
+  console.log(href)
   return (
     <>
       <div className={`${classes.project}`}>
@@ -18,7 +19,7 @@ const Project: FC<ProjectProps> = ({ title, text, img }) => {
 
         <p>{text}</p>
 
-        <Button text="View Project" />
+        <Button text="View Project" href={href} blank />
       </div>
     </>
   );

@@ -26,7 +26,7 @@ export default function MainNavigation() {
             <a href="#projects" className={classes.link}>My Projects</a>
           </li>
           <li className={classes.item}>
-           <Button text="Contact Me"/>
+           <Button text="Contact Me" href="#contact"/>
           </li>
         </ul>
       </nav>

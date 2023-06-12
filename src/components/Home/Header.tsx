@@ -19,8 +19,8 @@ export default function Header() {
           <h2 className={classes.h2}>Front-end Developer</h2>
 
           <div className={classes.buttons}>
-            <Button text="Let's talk" />
-            <Button text="Download CV" reverse />
+            <Button text="Let's talk" href='#contact' />
+            <Button text="Download CV" reverse href='#' />
           </div>
 
           <SocialMedia />
