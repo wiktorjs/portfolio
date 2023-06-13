@@ -1,3 +1,4 @@
+import Background from '@/components/UI/Background/Background';
 import classes from './Skills.module.scss';
 import skillsArr from '@/store/skills-images';
 

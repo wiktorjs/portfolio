@@ -7,13 +7,14 @@ import { A11y, Autoplay, Keyboard, Navigation, Pagination } from 'swiper';
 import 'swiper/swiper-bundle.min.css';
 import { CaretLeft, CaretRight } from '@phosphor-icons/react';
 import { useRef } from 'react';
-
+import Background from '@/components/UI/Background/Background';
 
 export default function Projects() {
   const swiperRef = useRef<SwiperClass>();
-  
+
   return (
     <section id="projects">
+      <Background />
       <h2>My Latest Projects</h2>
 
       <div className={classes.projects}>
@@ -38,8 +39,7 @@ export default function Projects() {
           spaceBetween={10}
           slidesPerView={1}
           a11y={{ enabled: true }}
-
-          onSwiper={(swiper) => swiperRef.current = swiper}
+          onSwiper={(swiper) => (swiperRef.current = swiper)}
         >
           {projectsArr.map((project, i) => (
             <SwiperSlide key={i}>
@@ -52,8 +52,16 @@ export default function Projects() {
             </SwiperSlide>
           ))}
 
-          <CaretLeft onClick={() => swiperRef.current?.slidePrev()} weight='bold' className={classes.icon}/>
-          <CaretRight onClick={() => swiperRef.current?.slideNext()} weight='bold' className={classes.icon} />
+          <CaretLeft
+            onClick={() => swiperRef.current?.slidePrev()}
+            weight="bold"
+            className={classes.icon}
+          />
+          <CaretRight
+            onClick={() => swiperRef.current?.slideNext()}
+            weight="bold"
+            className={classes.icon}
+          />
         </Swiper>
       </div>
     </section>

@@ -1,5 +1,5 @@
-@import "./variables";
-@import "./mixins";
+@import './variables';
+@import './mixins';
 h1 {
   font-size: 8rem;
   line-height: 1.2;
@@ -12,17 +12,19 @@ h1 {
       font-size: 6rem;
       font-weight: 100;
     }
-
+    
     &:nth-of-type(2) {
       font-weight: 300;
       letter-spacing: 10px;
     }
-
+    
     &:last-of-type {
       font-weight: 600;
       color: $color-primary;
       text-shadow: $t-outline-2px;
+      
 
+      
       @include respond(tab-port) {
         text-shadow: $t-outline;
         font-size: 6rem;
@@ -46,3 +48,5 @@ h2 {
   font-weight: 600;
   margin-bottom: 1rem;
 }
+
+

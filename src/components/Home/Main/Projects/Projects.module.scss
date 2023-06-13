@@ -1,7 +1,9 @@
 @import '@/app/styles/variables.scss';
 @import '@/app/styles/mixins.scss';
+
 .projects {
   position: relative;
+  height: fit-content;
   width: 100%;
 
   cursor: pointer;
@@ -86,3 +88,4 @@
     fill: $color-primary-dark-1;
   }
 }
+

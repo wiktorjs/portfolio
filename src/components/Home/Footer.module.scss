@@ -78,7 +78,8 @@
 
 .icon-box {
   display: inline-block;
-
+  outline: none;
+  transition: fill, transform, .2s ease;
   &:focus,
   &:hover > .icon {
     fill: $color-primary;

@@ -7,12 +7,12 @@ import logoImage from '@/img/logo.webp';
 
 export default function Header() {
   return (
-    <header className={classes.header}>
+    <header className={classes.header} >
       <img className={classes.logo} src={logoImage.src} alt="wiktorjs logo" />
       
       <div className={classes.content}>
         <div className={classes.text}>
-          <h1>
+          <h1 >
             <span>Hello,</span> <span>my name is</span> <span>Wiktor</span>
           </h1>
 
@@ -31,6 +31,7 @@ export default function Header() {
           <ProfileCard />
         </div>
       </div>
+
     </header>
   );
 }

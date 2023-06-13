@@ -4,7 +4,7 @@
 .card {
   @include absoluteCenter;
   width: 80%;
-
+z-index: 3;
   min-width: fit-content;
 
   padding: 8rem 5rem;

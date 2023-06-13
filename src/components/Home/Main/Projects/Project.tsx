@@ -9,7 +9,6 @@ interface ProjectProps {
 }
 
 const Project: FC<ProjectProps> = ({ title, text, img, href }) => {
-  console.log(href)
   return (
     <>
       <div className={`${classes.project}`}>

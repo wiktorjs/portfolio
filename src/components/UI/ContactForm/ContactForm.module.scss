@@ -7,6 +7,10 @@
   
   label {
     margin: 2rem 0 0.5rem;
+
+    &.label-invalid {
+      color: $color-error;
+    }
   }
 
   input {
@@ -15,8 +19,10 @@
 
   textarea {
     resize: none;
-    flex: 1;
     padding-top: 1rem;
+    height: 20rem;
+    max-width: 100%;
+    min-width: 100%;
   }
 
   & > input,
@@ -42,13 +48,25 @@
     &:focus {
       color: $color-primary-dark-1;
       border-color: $color-primary-dark-1;
-      box-shadow: 4px 4px 0 $color-primary-dark-1;
+      box-shadow: 3px 3px 0 $color-primary-dark-1;
     }
 
-    &.invalid {
-      border-color: rgb(227, 80, 80);
-      box-shadow: 4px 4px 0 rgb(227, 80, 80);
-      color: rgb(227, 80, 80);
+    &.input-invalid {
+      border-color: $color-error;
+      box-shadow: 3px 3px 0 $color-error;
+      color: $color-error;
+    }
+
+    @include respond (phone) {
+      font-size: 1.3rem;
     }
   }
+}
+
+.error-message {
+
+  color: $color-error;
+  font-weight: 600;
+  font-size: 1.3rem;
+  margin: 1rem 0 0 1rem;
 }
