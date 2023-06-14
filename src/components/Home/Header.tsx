@@ -20,7 +20,7 @@ export default function Header() {
 
           <div className={classes.buttons}>
             <Button text="Let's talk" href='#contact' />
-            <Button text="Download CV" reverse href='#' />
+            <Button text="Download CV" reverse href='https://drive.google.com/file/d/1gQKldF3KdkhdsvH7nFF6olfL8gJkpVv_/view?usp=sharing' blank />
           </div>
 
           <SocialMedia />
