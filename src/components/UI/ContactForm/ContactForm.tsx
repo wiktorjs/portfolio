@@ -62,7 +62,7 @@ export default function ContactForm() {
             formSubmitted ? '' : 'https://formsubmit.co/3c664f1d39a4f220e1c6c5e5ad9fd83a'
           }
           method="post"
-          target="_blank"
+          target='_blank'
           ref={formEl}
         >
           <Input
@@ -122,6 +122,8 @@ export default function ContactForm() {
           />
 
           {formSubmitted && <p className={classes.info}>Your inquiry was sent. Thank you!</p>}
+
+          <input type="hidden" name="_captcha" value="false"></input>
         </Form>
       )}
     </Formik>
