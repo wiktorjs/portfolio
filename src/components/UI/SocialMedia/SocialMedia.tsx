@@ -16,7 +16,7 @@ export default function SocialMedia() {
         <GithubLogo weight='regular' className={classes.icon} />
       </a>
 
-      <a className={classes.link} href="mailto:wiktorj.sienkiewicz@gmail.com" target="_blank">
+      <a className={classes.link} href="#contact">
         <EnvelopeSimple weight='regular' className={classes.icon} />
       </a>
     </div>

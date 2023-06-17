@@ -1,7 +1,8 @@
 import Input from './Input';
 import classes from './ContactForm.module.scss';
 import Button from '../Button/Button';
-import { useFormik, FormikErrors } from 'formik';
+import { FormikErrors, Formik, Form, Field, ErrorMessage } from 'formik';
+import { useRef, useState } from 'react';
 
 interface FormValues {
   name: string;
@@ -33,76 +34,96 @@ const validate = (values: FormValues) => {
 };
 
 export default function ContactForm() {
-  const formik = useFormik({
-    initialValues: {
-      name: '',
-      email: '',
-      text: '',
-    },
-    validate,
-    onSubmit: (values) => {
-      console.log(values);
-    },
-  });
+  const formEl = useRef<HTMLFormElement>(null);
+  const [formSubmitted, setFormSubmitted] = useState(false);
 
+  const initialValues: FormValues = {
+    name: '',
+    email: '',
+    text: '',
+  };
   return (
-    <form
-      className={classes.form}
-      action="https://formsubmit.co/196e578cc8be1edb9f50bc257f8acda5"
-      method="post"
-      onSubmit={formik.handleSubmit}
+    <Formik
+      initialValues={initialValues}
+      onSubmit={async (values, actions) => {
+        actions.setSubmitting(true);
+        formEl.current?.submit();
+        actions.setSubmitting(false);
+        setFormSubmitted(true);
+        actions.resetForm();
+      }}
+      validate={validate}
+      isInitialValid={false}
     >
-      <Input
-        type="name"
-        placeholder="John Smith"
-        onChange={formik.handleChange}
-        onBlur={formik.handleBlur}
-        value={formik.values.name}
-        error={formik.errors.name}
-        touched={formik.touched.name}
-      />
+      {({ errors, touched, isSubmitting, isValid }) => (
+        <Form
+          className={classes.form}
+          action={
+            formSubmitted ? '' : 'https://formsubmit.co/3c664f1d39a4f220e1c6c5e5ad9fd83a'
+          }
+          method="post"
+          target="_blank"
+          ref={formEl}
+        >
+          <Input
+            type="name"
+            placeholder="John Smith"
+            error={errors.name}
+            touched={touched.name}
+            disabled={formSubmitted}
+          />
 
-      <Input
-        type="email"
-        htmlType="email"
-        placeholder="example@site.com"
-        onChange={formik.handleChange}
-        onBlur={formik.handleBlur}
-        value={formik.values.email}
-        error={formik.errors.email}
-        touched={formik.touched.email}
-      />
+          <Input
+            type="email"
+            htmlType="email"
+            placeholder="example@site.com"
+            error={errors.email}
+            touched={touched.email}
+            disabled={formSubmitted}
+          />
 
-      <label
-        className={
-          formik.touched.text && formik.errors.text
-            ? classes['label-invalid']
-            : ''
-        }
-        htmlFor="text"
-      >
-        Your message*
-      </label>
+          <label
+            className={
+              touched.text && errors.text ? classes['label-invalid'] : ''
+            }
+            htmlFor="text"
+          >
+            Your message*
+          </label>
 
-      <textarea
-        id="text"
-        name="text"
-        placeholder="Type your message"
-        onChange={formik.handleChange}
-        onBlur={formik.handleBlur}
-        value={formik.values.text}
-        className={
-          formik.touched.text && formik.errors.text
-            ? classes['input-invalid']
-            : ''
-        }
-      ></textarea>
+          <Field
+            as="textarea"
+            id="text"
+            name="text"
+            placeholder="Type your message"
+            className={
+              touched.text && errors.text ? classes['input-invalid'] : ''
+            }
+            disabled={formSubmitted}
+          />
 
-      {formik.touched.text && formik.errors.text && (
-        <p className={classes['error-message']}>{formik.errors.text}</p>
+          <ErrorMessage
+            name="text"
+            render={(msg) => <p className={classes['error-message']}>{msg}</p>}
+          />
+
+          <Button
+            text={
+              isSubmitting
+                ? 'Submitting...'
+                : formSubmitted
+                ? 'Done!'
+                : 'Contact Me'
+            }
+            reverse
+            form
+            invalid={!isValid}
+            disabled={isSubmitting || formSubmitted}
+          />
+
+          {formSubmitted && <p className={classes.info}>Your inquiry was sent. Thank you!</p>}
+        </Form>
       )}
-
-      <Button text="Contact Me" reverse form invalid={formik.errors} />
-    </form>
+    </Formik>
   );
 }

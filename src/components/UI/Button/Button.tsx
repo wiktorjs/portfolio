@@ -2,18 +2,25 @@ import { FC } from 'react';
 import classes from './Button.module.scss';
 import { FormikErrors } from 'formik';
 
-
 interface ButtonProps {
   text: string;
   reverse?: boolean;
   form?: boolean;
   href?: string;
   blank?: boolean;
-  invalid?: FormikErrors<{ name: string; email: string; text: string; }> 
-
+  invalid?: boolean;
+  disabled?: boolean;
 }
 
-const Button: FC<ButtonProps> = ({ text, reverse, form, href, blank, invalid }) => {
+const Button: FC<ButtonProps> = ({
+  text,
+  reverse,
+  form,
+  href,
+  blank,
+  invalid,
+  disabled,
+}) => {
 
   return (
     <>
@@ -32,10 +39,12 @@ const Button: FC<ButtonProps> = ({ text, reverse, form, href, blank, invalid }) 
 
       {form && (
         <button
-          type="submit"
+          type={disabled ? 'reset' : 'submit'}
           className={`${classes.btn} ${reverse ? classes.reverse : ''} ${
             classes.form
-          }`}
+          } ${invalid && !disabled ? classes.invalid : ''}
+          ${disabled ? classes.disabled : ''}`}
+          disabled={disabled}
         >
           <span className={`${classes.key} ${classes['key--1']}`}></span>
           <span className={classes.text}>{text}</span>

@@ -19,9 +19,6 @@ export default function Contact() {
         <div className={classes['form-box']}>
           <h4>Contact Info</h4>
           <ContactForm />
-          <p className={classes.info}>
-            Form is currently disabled. Please contact me directly through <a href="mailto:wiktorj.sienkiewicz@gmail.com" target='_blank'>my email address.</a>
-          </p>
         </div>
       </div>
     </section>

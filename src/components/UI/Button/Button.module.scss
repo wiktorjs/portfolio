@@ -4,7 +4,6 @@
   // flex-grow: 1;
   display: inline-block;
 
-
   position: relative;
   font-size: 1.3rem;
   font-weight: 700;
@@ -21,7 +20,7 @@
   user-select: none;
 
   box-shadow: 2px 2px 0 $color-black;
-  
+
   background-color: $color-primary;
   transition: color, background-color 0.3s ease-in-out;
   will-change: color, background-color;
@@ -110,7 +109,6 @@
 }
 // Original design by cssbuttons-io
 
-
 .reverse {
   background-color: $color-black;
 
@@ -138,28 +136,92 @@
       padding-left: 1.5em;
     }
   }
-}
 
-.form {
-  margin-top: 2rem;
-  cursor: pointer;
-  border-radius: 5px;
-  transition: transform .2s .2s ease;
+  // ! FORM STYLING
+  &.form {
+    margin-top: 2rem;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: transform 0.2s 0.2s ease;
 
-  & > .text {
+    & > .text {
       text-align: center;
       padding-left: 1rem;
-  }
+    }
 
-  &:hover {
+    &:hover {
       transform: translateY(-3px);
 
       & > .text {
-          padding-left: 1rem;
+        padding-left: 1rem;
       }
-  }
-}
+    }
 
-.invalid {
-  background-color: $color-error;
+    &.invalid {
+      background-color: $color-error;
+      color: $color-white;
+
+      &:hover,
+      &:focus,
+      &:active {
+        background: $color-error;
+  
+        &::before {
+          background-color: $color-white;
+        }
+  
+        & .text {
+          color: $color-white;
+        }
+      }
+    }
+  
+    &.disabled {
+      background-color: #a1dc84;
+      color: $color-black;
+  
+      & .text {
+        color: $color-black;
+      }
+  
+      &::before {
+        background-color: $color-black;
+      }
+
+      &:hover {
+        background-color: #a1dc84;
+      }
+    }
+
+    // ! FORM STATES, NO ANIMATION
+    &.invalid,
+    &.disabled {
+      cursor: not-allowed;
+      &:hover,
+      &:focus,
+      &:active {
+        transform: translateY(0);
+    
+        &::before {
+          width: 1.5625rem;
+        }
+    
+        & .key--1 {
+          left: 0.625rem;
+          width: 1.5625rem;
+        }
+    
+        & .key--2 {
+          right: 1.875rem;
+          width: 1.5625rem;
+        }
+        & .key--3 {
+          right: 0.625rem;
+          width: 0.625rem;
+        }
+      }
+    }
+  }
+
+ 
 }

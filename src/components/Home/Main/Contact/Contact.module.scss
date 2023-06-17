@@ -95,23 +95,4 @@
   transform: rotate(15deg);
 }
 
-.info {
-  font-size: 1.2rem;
-  text-align: center;
-  margin-top: 2rem;
-  font-weight: 600;
-  
-  & > a {
-    outline: none;
 
-    text-decoration: none;
-    cursor: pointer;
-    border-bottom: 1px solid currentColor;
-    transition: color, border-color, 0.2s ease;
-
-    &:focus,
-    &:hover {
-      color: $color-primary-dark-1;
-    }
-  }
-}

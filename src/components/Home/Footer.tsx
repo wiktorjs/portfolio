@@ -1,4 +1,8 @@
-import { EnvelopeSimple, GithubLogo, LinkedinLogo } from '@phosphor-icons/react';
+import {
+  EnvelopeSimple,
+  GithubLogo,
+  LinkedinLogo,
+} from '@phosphor-icons/react';
 
 import classes from './Footer.module.scss';
 import footerLogo from '@/img/logo.webp';
@@ -40,7 +44,6 @@ export default function Footer() {
           </li>
         </ul>
 
-
         <div className={classes.social}>
           <a
             className={classes['icon-box']}
@@ -58,11 +61,7 @@ export default function Footer() {
             <GithubLogo weight="regular" className={classes.icon} />
           </a>
 
-          <a
-            className={classes['icon-box']}
-            href="mailto:wiktorj.sienkiewicz@gmail.com"
-            target="_blank"
-          >
+          <a className={classes['icon-box']} href="#contact">
             <EnvelopeSimple weight="regular" className={classes.icon} />
           </a>
         </div>
@@ -76,7 +75,6 @@ export default function Footer() {
             </a>
           </span>
         </p>
-
       </div>
     </footer>
   );
