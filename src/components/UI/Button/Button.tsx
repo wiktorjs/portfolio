@@ -36,7 +36,6 @@ const Button: FC<ButtonProps> = ({ text, reverse, form, href, blank, invalid }) 
           className={`${classes.btn} ${reverse ? classes.reverse : ''} ${
             classes.form
           }`}
-          disabled
         >
           <span className={`${classes.key} ${classes['key--1']}`}></span>
           <span className={classes.text}>{text}</span>

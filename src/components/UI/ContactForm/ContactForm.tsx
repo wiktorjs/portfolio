@@ -33,7 +33,6 @@ const validate = (values: FormValues) => {
 };
 
 export default function ContactForm() {
-
   const formik = useFormik({
     initialValues: {
       name: '',
@@ -41,13 +40,15 @@ export default function ContactForm() {
       text: '',
     },
     validate,
-    onSubmit: (values) => {},
+    onSubmit: (values) => {
+      console.log(values);
+    },
   });
 
   return (
     <form
       className={classes.form}
-      // action="/send_message.ts"
+      action="https://formsubmit.co/196e578cc8be1edb9f50bc257f8acda5"
       method="post"
       onSubmit={formik.handleSubmit}
     >
@@ -85,6 +86,7 @@ export default function ContactForm() {
 
       <textarea
         id="text"
+        name="text"
         placeholder="Type your message"
         onChange={formik.handleChange}
         onBlur={formik.handleBlur}
@@ -95,7 +97,7 @@ export default function ContactForm() {
             : ''
         }
       ></textarea>
-      
+
       {formik.touched.text && formik.errors.text && (
         <p className={classes['error-message']}>{formik.errors.text}</p>
       )}

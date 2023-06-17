@@ -22,6 +22,7 @@ const Input: FC<InputProps> = ({ type, htmlType, placeholder, onChange, onBlur, 
       <input
         id={type}
         type={htmlType || 'text'}
+        name={type}
         placeholder={placeholder}
         value={value}
         onChange={onChange}
