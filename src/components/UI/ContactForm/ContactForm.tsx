@@ -123,7 +123,7 @@ export default function ContactForm() {
 
           {formSubmitted && <p className={classes.info}>Your inquiry was sent. Thank you!</p>}
 
-          <input type="hidden" name="_captcha" value="false"></input>
+
         </Form>
       )}
     </Formik>
