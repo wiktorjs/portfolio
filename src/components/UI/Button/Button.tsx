@@ -45,6 +45,7 @@ const Button: FC<ButtonProps> = ({
           } ${invalid && !disabled ? classes.invalid : ''}
           ${disabled ? classes.disabled : ''}`}
           disabled={disabled}
+          rel="noopener noreferrer"
         >
           <span className={`${classes.key} ${classes['key--1']}`}></span>
           <span className={classes.text}>{text}</span>
