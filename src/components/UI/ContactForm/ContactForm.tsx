@@ -43,100 +43,89 @@ export default function ContactForm() {
     text: '',
   };
   return (
-    // <Formik
-    //   initialValues={initialValues}
-    //   onSubmit={async (values, actions) => {
-    //     actions.setSubmitting(true);
-    //     formEl.current?.submit();
-    //     actions.setSubmitting(false);
-    //     setFormSubmitted(true);
-    //     actions.resetForm();
-    //   }}
-    //   validate={validate}
-    //   isInitialValid={false}
-    // >
-    //   {({ errors, touched, isSubmitting, isValid }) => (
-    //     <Form
-    //       className={classes.form}
-    //       action={
-    //         formSubmitted ? '' : 'https://formsubmit.co/3c664f1d39a4f220e1c6c5e5ad9fd83a'
-    //       }
-    //       method="post"
-    //       target='_blank'
-    //       ref={formEl}
-    //     >
-    //       <Input
-    //         type="name"
-    //         placeholder="John Smith"
-    //         error={errors.name}
-    //         touched={touched.name}
-    //         disabled={formSubmitted}
-    //       />
-
-    //       <Input
-    //         type="email"
-    //         htmlType="email"
-    //         placeholder="example@site.com"
-    //         error={errors.email}
-    //         touched={touched.email}
-    //         disabled={formSubmitted}
-    //       />
-
-    //       <label
-    //         className={
-    //           touched.text && errors.text ? classes['label-invalid'] : ''
-    //         }
-    //         htmlFor="text"
-    //       >
-    //         Your message*
-    //       </label>
-
-    //       <Field
-    //         as="textarea"
-    //         id="text"
-    //         name="text"
-    //         placeholder="Type your message"
-    //         className={
-    //           touched.text && errors.text ? classes['input-invalid'] : ''
-    //         }
-    //         disabled={formSubmitted}
-    //       />
-
-    //       <ErrorMessage
-    //         name="text"
-    //         render={(msg) => <p className={classes['error-message']}>{msg}</p>}
-    //       />
-
-    <form
-      className={classes.form}
-      action={
-        formSubmitted
-          ? ''
-          : 'https://formsubmit.co/3c664f1d39a4f220e1c6c5e5ad9fd83a'
-      }
-      method="post"
-      target="_blank"
+    <Formik
+      initialValues={initialValues}
+      onSubmit={async (values, actions) => {
+        actions.setSubmitting(true);
+        formEl.current?.submit();
+        actions.setSubmitting(false);
+        setFormSubmitted(true);
+        actions.resetForm();
+      }}
+      validate={validate}
+      isInitialValid={false}
     >
-      <Button
-        text={
-          /* isSubmitting
-              ? 'Submitting...'
-              : */ formSubmitted ? 'Done!' : 'Contact Me'
-        }
-        reverse
-        form
-        // invalid={!isValid}
-        // disabled={isSubmitting || formSubmitted}
-      />
+      {({ errors, touched, isSubmitting, isValid }) => (
+        <Form
+          className={classes.form}
+          action={
+            formSubmitted ? '' : 'https://formsubmit.co/3c664f1d39a4f220e1c6c5e5ad9fd83a'
+          }
+          method="post"
+          target='_blank'
+          ref={formEl}
+        >
+          <Input
+            type="name"
+            placeholder="John Smith"
+            error={errors.name}
+            touched={touched.name}
+            disabled={formSubmitted}
+          />
 
-      {formSubmitted && (
-        <p className={classes.info}>Your inquiry was sent. Thank you!</p>
+          <Input
+            type="email"
+            htmlType="email"
+            placeholder="example@site.com"
+            error={errors.email}
+            touched={touched.email}
+            disabled={formSubmitted}
+          />
+
+          <label
+            className={
+              touched.text && errors.text ? classes['label-invalid'] : ''
+            }
+            htmlFor="text"
+          >
+            Your message*
+          </label>
+
+          <Field
+            as="textarea"
+            id="text"
+            name="text"
+            placeholder="Type your message"
+            className={
+              touched.text && errors.text ? classes['input-invalid'] : ''
+            }
+            disabled={formSubmitted}
+          />
+
+          <ErrorMessage
+            name="text"
+            render={(msg) => <p className={classes['error-message']}>{msg}</p>}
+          />
+
+          <Button
+            text={
+              isSubmitting
+                ? 'Submitting...'
+                : formSubmitted
+                ? 'Done!'
+                : 'Contact Me'
+            }
+            reverse
+            form
+            invalid={!isValid}
+            disabled={isSubmitting || formSubmitted}
+          />
+
+          {formSubmitted && <p className={classes.info}>Your inquiry was sent. Thank you!</p>}
+
+
+        </Form>
       )}
-    </form>
-
-    // </Form>
+    </Formik>
   );
 }
-//     </Formik>
-//   );
-// }
