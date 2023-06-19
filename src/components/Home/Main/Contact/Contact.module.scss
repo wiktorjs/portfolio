@@ -95,4 +95,28 @@
   transform: rotate(15deg);
 }
 
+// ! ANIMATION STYLING
+.contact-box {
+  overflow: hidden;
+  & > * {
+    transition: transform 1s ease;
+  }
 
+  & > .form-box {
+    transform: translateY(150%);
+
+    @include respond(tab-port) {
+      transform: translate(0);
+    }
+  }
+
+  &.visible {
+    & > .form-box {
+      transform: translateY(0);
+    }
+  }
+
+  @include respond(tab-port) {
+    overflow: visible;
+  }
+}
