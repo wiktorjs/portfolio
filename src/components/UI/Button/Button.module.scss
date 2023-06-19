@@ -177,8 +177,9 @@
     }
   
     &.disabled {
-      background-color: #a1dc84;
+      background-color: $color-success;
       color: $color-black;
+      cursor: not-allowed;
   
       & .text {
         color: $color-black;
@@ -196,7 +197,6 @@
     // ! FORM STATES, NO ANIMATION
     &.invalid,
     &.disabled {
-      cursor: not-allowed;
       &:hover,
       &:focus,
       &:active {
