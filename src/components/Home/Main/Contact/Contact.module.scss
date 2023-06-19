@@ -98,21 +98,22 @@
 // ! ANIMATION STYLING
 .contact-box {
   overflow: hidden;
-  & > * {
-    transition: transform 1s ease;
-  }
 
   & > .form-box {
     transform: translateY(150%);
+    transition: transform, opacity, 1s ease;
 
     @include respond(tab-port) {
-      transform: translate(0);
+      transition-duration: .5s;
+      transform: translateX(100vw);
+      opacity: 0;
     }
   }
 
   &.visible {
     & > .form-box {
-      transform: translateY(0);
+      transform: translate(0);
+      opacity: 1;
     }
   }
 
