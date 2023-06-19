@@ -1,4 +1,5 @@
 import foodlifyImg from '@/img/foodlify.webp';
+import portfolioImg from '@/img/portfolio.webp';
 import pzgImg from '@/img/pzg.webp';
 import yobImg from '@/img/yob.webp';
 
@@ -9,6 +10,14 @@ const projectsArr = [
     img: foodlifyImg.src,
     href: 'https://foodlify.vercel.app/'
   },
+
+  {
+    name: 'Portfolio',
+    desc: 'My portfolio website, built using NextJS along with TypeScript in order to learn it.',
+    img: portfolioImg.src,
+    href: 'https://wiktorjs.com/'
+  },
+
 
   {
     name: 'PzG',
