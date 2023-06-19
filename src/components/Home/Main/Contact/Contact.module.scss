@@ -2,7 +2,7 @@
 @import '@/app/styles/mixins.scss';
 .contact {
   padding-bottom: 15rem;
-
+  overflow: hidden;
   &-box {
     display: flex;
     flex-direction: row;
