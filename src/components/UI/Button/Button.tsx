@@ -1,6 +1,5 @@
 import { FC } from 'react';
 import classes from './Button.module.scss';
-import { FormikErrors } from 'formik';
 
 interface ButtonProps {
   text: string;
