@@ -6,18 +6,27 @@ import { Swiper, SwiperClass, SwiperSlide } from 'swiper/react';
 import { A11y, Autoplay, Keyboard, Navigation, Pagination } from 'swiper';
 import 'swiper/swiper-bundle.min.css';
 import { CaretLeft, CaretRight } from '@phosphor-icons/react';
-import { useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import Background from '@/components/UI/Background/Background';
+import { useInView } from 'react-intersection-observer';
 
 export default function Projects() {
   const swiperRef = useRef<SwiperClass>();
+  const { ref, inView } = useInView({ threshold: 0.7 });
+
+  useEffect(() => {
+    if (swiperRef.current) {
+      inView ? swiperRef.current.autoplay.start() : swiperRef.current.autoplay.stop() 
+    }
+
+  }, [swiperRef, inView]);
 
   return (
     <section id="projects">
       <Background />
       <h2>My Latest Projects</h2>
 
-      <div className={classes.projects}>
+      <div className={classes.projects} ref={ref}>
         <Swiper
           modules={[Navigation, Pagination, Autoplay, Keyboard, A11y]}
           centeredSlides
